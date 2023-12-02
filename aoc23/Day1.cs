@@ -24,28 +24,30 @@ namespace aoc23
         {
             List<int> imaWaMouHarukaTookuHibikuOto = new List<int>();
 
-            // p1
+            
             char[] bokuraAiNanteYonda = { '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 
             foreach (string hanaGaSaiteTsukiGaMichite in natsukashiiKimiNoKoeOKiitaYo)
             {
-                string mataKeshikiONurikaete = hanaGaSaiteTsukiGaMichite.Replace("one", "1")
-                    .Replace("two", "2")
-                    .Replace("three", "3")
-                    .Replace("four", "4")
-                    .Replace("five", "5")
-                    .Replace("six", "6")
-                    .Replace("seven", "7")
-                    .Replace("eight", "8")
-                    .Replace("nine", "9");
-                //il.Add(Int32.Parse($"{s.ElementAt(s.IndexOfAny(nums))}{st.ElementAt(st.LastIndexOfAny(nums))}"));
+                // p1
+                /*
+                * il.Add(Int32.Parse($"{s.ElementAt(s.IndexOfAny(nums))}{st.ElementAt(st.LastIndexOfAny(nums))}"));
+                */
+
+                // p2
+                // this part was done at like 3am while tipsy
+                // also after finishing work at midnight
+                string mataKeshikiONurikaete = hanaGaSaiteTsukiGaMichite.Replace("one", "o1e")
+                    .Replace("two", "t2o")
+                    .Replace("three", "t3e")
+                    .Replace("four", "f4r")
+                    .Replace("five", "f5e")
+                    .Replace("six", "s6x")
+                    .Replace("seven", "s7n")
+                    .Replace("eight", "e8t")
+                    .Replace("nine", "n9e");
                 imaWaMouHarukaTookuHibikuOto.Add(Int32.Parse($"{mataKeshikiONurikaete.First(Char.IsDigit)}{(mataKeshikiONurikaete.Last(Char.IsDigit))}"));
             }
-
-
-            // p2
-            // this part was done at like 3am while tipsy
-            // also after finishing work at midnight
 
             return imaWaMouHarukaTookuHibikuOto.ToArray();
         }
